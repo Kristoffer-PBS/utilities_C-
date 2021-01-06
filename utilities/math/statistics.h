@@ -2,12 +2,9 @@
 #define _UTILITIES_MATH_STATISTICS_H
 
 #include <cstdint>
+#include <vector>
 
-namespace utilities
-{
-namespace math
-{
-namespace statistics {
+namespace utilities::math::statistics {
     // data-frame class
 
     // combinations
@@ -31,9 +28,9 @@ namespace statistics {
     // gamma-distribution
     // exp-distribution
 
-}
 
-}
+    // correlations coefficient (see cor(x, y) in R)
+
 
 }
 
