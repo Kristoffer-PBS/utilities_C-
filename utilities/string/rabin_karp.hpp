@@ -1,28 +1,8 @@
-#ifndef COLOR_PRINT_H
-#define COLOR_PRINT_H
+#pragma once
 
-#include <cstdio>
-#include <iostream>
-#include <string>
-
-#include <algorithm>
-#include <cassert>
-#include <fstream>
-#include <functional>
-#include <sstream>
-#include <vector>
-
-#include "utilities/fs.h"
-#include "utilities/graph.h"
-#include "utilities/math.h"
-#include "utilities/string.h"
-#include "utilities/terminal.h"
+// the rabin-karp string matching algorithm
 
 
-
-namespace utilities {
-
-    namespace string {
         using std::size_t;
         using std::string;
 
@@ -112,87 +92,3 @@ namespace utilities {
 
             return table;
         }
-
-        // bool knuth_morris_prat(const std::string& pattern, const std::string& text) {
-        //     int i = 0, j = 0; // starting values
-        //     size_t n = text.length();
-        //     size_t m = pattern.length();
-
-        //     while (i <= n) {  // search through text string
-        //         while(j >= 0 && text[i] != pattern[j]) {
-        //             j = b[j];  // if different, reset j using b
-        //         }
-        //         i += 1;
-        //         j += 1;  // if same advance both pointers
-        //         if (j == m) {  // a match found when a == m
-        //             j = b[j];  // prepare j for the next possible match
-        //             return true;
-        //         }
-        //     }
-        //     return false;
-        // }
-
-
-        // void trim(const std::string& pattern, std::string& text) {
-        //     for (auto iter = text.begin(); iter != text.end(); iter++) {
-
-        //     }
-        //     text.erase()
-        // }
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-std::vector<std::string> read_lines(std::string path) {
-    std::ifstream file(path);
-
-    if (!file.is_open()) {
-        throw std::invalid_argument("the file:\t" + path + "\t does not exist.\n");
-    }
-
-    std::string line{};
-    std::vector<std::string> lines{};
-
-    while (std::getline(file, line)) {
-        lines.push_back(line);
-    }
-
-    return lines;
-}
-
-std::string read_to_string(const std::string& path) {
-
-    std::ifstream file(path);
-
-    if (!file.is_open()) {
-        throw std::invalid_argument("the file:\t" + path + "\t does not exist.\n");
-    }
-    std::string line{};
-    std::vector<std::string> lines{};
-
-    while (std::getline(file, line)) {
-        lines.push_back(line);
-    }
-
-    std::string retval{};
-
-    for (const std::string& str : lines) {
-        retval += str + "\n";
-    }
-
-    return retval;
-}
-
-#endif // COLOR_PRINT_H

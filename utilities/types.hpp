@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstdint>
 
 namespace utilities::types {
@@ -16,5 +18,4 @@ namespace utilities::types {
 
     using f32 = float;
     using f64 = double;
-
 } // utilities::types

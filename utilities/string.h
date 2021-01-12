@@ -1,12 +1,9 @@
-#ifndef _UTILITIES_STRING_H
-#define _UTILITIES_STRING_H
-
+#pragma once
 #include <string>
 // #include <string_view>
 
 
-namespace utilities {
-namespace string {
+namespace utilities::string {
     // using std::string_view;
     using std::size_t;
     using std::vector;
@@ -63,9 +60,13 @@ void tokenize_string(const std::string& str, const char delim, std::vector<std::
 // join (initializer-list, splitter)
 
 
-} // namespace string
-} // namespace utilities
+        // void trim(const std::string& pattern, std::string& text) {
+        //     for (auto iter = text.begin(); iter != text.end(); iter++) {
+
+        //     }
+        //     text.erase()
+        // }
 
 
+} // namespace utilities::string
 
-#endif // _UTILITIES_STRING_H

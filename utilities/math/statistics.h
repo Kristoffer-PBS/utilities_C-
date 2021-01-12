@@ -28,6 +28,9 @@ namespace utilities::math::statistics {
     // gamma-distribution
     // exp-distribution
 
+    // berrett test
+    // HukeySTD
+    // bonferoni
 
     // correlations coefficient (see cor(x, y) in R)
 
