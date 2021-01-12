@@ -29,6 +29,17 @@ namespace utilities::math {
         return sequence;
     }
 
+    bool is_in_range(i32 element, i32 start, i32 end, i32 step_size = 1, bool inclusive = false) noexcept {
+        auto sequence = range(start, end, step_size, inclusive);
+        for (const auto x : sequence) {
+            if (element == x) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
     std::vector<f64> arange(f64 start, f64 end, f64 step_size = 1.0) {
         std::vector<f64> sequence;
