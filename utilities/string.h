@@ -3,6 +3,11 @@
 // #include <string_view>
 
 
+#include "string/hamming_distance.hpp"
+
+
+
+
 namespace utilities::string {
     // using std::string_view;
     using std::size_t;
