@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string>
 #include <string_view>
-
 #include "../data_structures/matrix.h"
 
 namespace utilities {
@@ -32,15 +31,15 @@ namespace utilities {
             size_t m = M.length();
 
             /* std::cout << "n = " << n << "\tm = " << m << std::endl; */
-            
+
             // if any of the strings are 0 in length the edit distance
-            // will simply be the length of the other string. 
+            // will simply be the length of the other string.
             if (n == 0) {
                 return m;
             } else if (m == 0) {
                 return n;
             }
-            
+
             // use a matrix for dynamic programming
             utilities::data_structures::Matrix<int> lut(n+1, m+1, 0);
             /* std::cout << "row = " << lut.nrows() << "\tcol = " << lut.ncols() << std::endl; */
@@ -60,7 +59,7 @@ namespace utilities {
             for (int i = 0; i < m + 1; i++) {
                 lut[0][i] = i;
             }
-            
+
 
             for (int i = 1; i < n + 1; i++) {
                 for (int j = 1; j < m + 1; j++) {
@@ -77,13 +76,13 @@ namespace utilities {
                         lut[i][j-1] + 1,
                         lut[i-1][j-1] + substitution_cost
                     });
-                   
+
                     /* std::cout << lut << "\n\n" << std::endl; */
                 }
             }
 
             std::cout << lut;
-            
+
             /* return lut[n][m]; */
             return lut[n-1][m-1];
 

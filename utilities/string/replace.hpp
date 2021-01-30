@@ -18,6 +18,8 @@ namespace utilities::string {
 
             res += replacement;
             itr = match + (int) substr.length();
+
+            if () {}
         }
 
         return res;
